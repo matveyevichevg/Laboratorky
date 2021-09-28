@@ -1,29 +1,25 @@
 import math
 
-# функция проверки значения, принимает переменную неопределенного типа, возвращает True если это число и оно больше нуля, False во всех остальных случаях
-def isPositiveNumber():
+# функция проверки значения, принимает переменную неопределенного типа,
+# возвращает True если это число и оно больше нуля, False во всех остальных случаях
+def isPositiveNumber(num):
     try:
-        if float(f) > 0:
+        if float(num) > 0:
             return True
         else:
             return False
     except ValueError:
         return False
 
-# функция ввода значения катетов, принимает переменную а и b, возвращает их если они прошли проверку isPositiveNumber
+# функция ввода значения катетов, принимает переменную k ,
+# возвращает ee если онa прошлa проверку isPositiveNumber
+print('Введите зачения катетов')
 def getPositiveNumber():
     while True:
-        a = input('Веедите катет a: ' )
-        if isPositiveNumber(a):
-            a = float(a)
+        k = input('Катет равен: ' )
+        if isPositiveNumber(k):
+            a = float(k)
             return a
-        else:
-            print('Ошибка, Введите положительное число')
-    while True:
-        b = input('Веедите катет b: ' )
-        if isPositiveNumber(b):
-            b = float(b)
-            return b
         else:
             print('Ошибка, Введите положительное число')
 
