@@ -18,8 +18,8 @@ def getPositiveNumber():
     while True:
         k = input('Катет равен: ' )
         if isPositiveNumber(k):
-            a = float(k)
-            return a
+            k = float(k)
+            return k
         else:
             print('Ошибка, Введите положительное число')
 
