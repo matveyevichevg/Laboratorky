@@ -11,9 +11,9 @@ def isPositiveNumber(num):
     except ValueError:
         return False
 
+print('Введите зачения катетов')
 # функция ввода значения катетов, принимает переменную k ,
 # возвращает ee если онa прошлa проверку isPositiveNumber
-print('Введите зачения катетов')
 def getPositiveNumber():
     while True:
         k = input('Катет равен: ' )
