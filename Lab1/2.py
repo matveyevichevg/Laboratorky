@@ -1,31 +1,36 @@
-def ex(f):
+# функция проверки значения, принимает переменную неопределенного типа,
+# возвращает True если это число и оно больше нуля, False во всех остальных случаях
+def isPositiveNumber(num):
     try:
-        if float(f) > 0:
+        if float(num) > 0:
             return True
         else:
             return False
     except ValueError:
         return False
-while True:
-    u1 = input('Введи первый угол: ' )
-    if ex(u1):
-        a=float(u1)
-        break
-    else:
-        print('Ошибка, Введите положительное число')
-while True:
-    u2 = input('Введи второй угол: ' )
-    if ex(u2):
-        a=float(u2)
-        break
-    else:
-        print('Ошибка, Введите положительное число')
-if int(u1) + int(u2) == 180:
-    print('Ошибка')
-elif int(u1) == 90 or int(u2) == 90:
-    print('Это прямоугольный треугольник')
-elif int(u1) > 90 or int(u2) > 90:
-    print('Это тупоугольный треугольник')
+# функция ввода значения угла, принимает переменную Angle ,
+# возвращает ee если онa прошлa проверку isPositiveNumber
+def getAngle():
+    while True:
+        Angle = input('Введи угол: ' )
+        if isPositiveNumber(Angle):
+            Angle=float(Angle)
+            return (Angle)
+        else:
+            print('Ошибка, Введите положительное число')
+
+u1 = getAngle()
+u2 = getAngle()
+
+while float(u1) + float(u2) >= 180:
+    print('Ошибка,введи значения углов заново')
+    u1 = getAngle()
+    u2 = getAngle()
 else:
-    print('Это остроугольный треугольник')
+    if float(u1) == 90 or float(u2) == 90:
+        print('Это прямоугольный треугольник')
+    elif float(u1) > 90 or float(u2) > 90:
+        print('Это тупоугольный треугольник')
+    else:
+        print('Это остроугольный треугольник')
 
