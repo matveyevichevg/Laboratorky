@@ -21,7 +21,7 @@ def getPositiveNumber():
             k = float(k)
             return k
         else:
-            print('Ошибка, Введите положительное число')
+            print('Ошибка, Введитe положительное число')
 
 a=getPositiveNumber()
 b=getPositiveNumber()

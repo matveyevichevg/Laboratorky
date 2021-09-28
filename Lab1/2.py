@@ -17,7 +17,7 @@ def getAngle():
             Angle=float(Angle)
             return (Angle)
         else:
-            print('Ошибка, Введите положительное число')
+            print('Ошибка, введите положительное число')
 
 u1 = getAngle()
 u2 = getAngle()

@@ -17,4 +17,4 @@ while True:
         print('Ошибка, ведите число')
 
 C = float((5/9)*(int(F)-32))
-print('По цельсию равно: {0:.1f} '.format(C))
+print('Пo цельсию равно: {0:.1f} '.format(C))
