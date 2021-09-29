@@ -1,20 +1,12 @@
-# функция проверки значения, принимает переменную неопределенного типа,
-# возвращает True если это число и оно больше нуля, False во всех остальных случаях
-def isPositiveNumber(num):
-    try:
-        if float(num):
-            return True
-        else:
-            return False
-    except ValueError:
-        return False
-while True:
-    F = input('Введите градусы по фаренгейту: ')
-    if isPositiveNumber(F):
-        F=float(F)
-        break
-    else:
-        print('Ошибка, ведите число')
+import CheckInput
 
-C = float((5/9)*(int(F)-32))
-print('Пo цельсию равно: {0:.1f} '.format(C))
+print('Программма перевода градусов по Цельсию в градусы по Фаренгейту')
+
+F = CheckInput.getNumber('Введите значение градусов по Фаренгейту: ')
+
+if F <= -273.15:
+    print('Ошибка, введенное значение меньше абсолютного ноля')
+    F = CheckInput.getNumber('Введите значение градусов по Фаренгейту: ')
+else:
+    C = float((5/9)*(float(F)-32))
+    print('Пo цельсию равно: {0:.1f} '.format(C))
