@@ -1,30 +1,10 @@
 import math
+import CheckInput
 
-# функция проверки значения, принимает переменную неопределенного типа,
-# возвращает True если это число и оно больше нуля, False во всех остальных случаях
-def isPositiveNumber(num):
-    try:
-        if float(num) > 0:
-            return True
-        else:
-            return False
-    except ValueError:
-        return False
+print('Программа для вычисления гипотенузы треугольника')
 
-print('Введите зачения катетов')
-# функция ввода значения катетов, принимает переменную k ,
-# возвращает ee если онa прошлa проверку isPositiveNumber
-def getPositiveNumber():
-    while True:
-        k = input('Катет равен: ' )
-        if isPositiveNumber(k):
-            k = float(k)
-            return k
-        else:
-            print('Ошибка, Введитe положительное число')
-
-a=getPositiveNumber()
-b=getPositiveNumber()
+a=CheckInput.getPositiveNumber('Введите катет а:')
+b=CheckInput.getPositiveNumber('Введите катет b:')
 
 gip = math.sqrt(a**2 + b**2)
 print('Гипотенуза равна: {0:.1f} '.format(gip))

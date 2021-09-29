@@ -1,31 +1,14 @@
-# функция проверки значения, принимает переменную неопределенного типа,
-# возвращает True если это число и оно больше нуля, False во всех остальных случаях
-def isPositiveNumber(num):
-    try:
-        if float(num) > 0:
-            return True
-        else:
-            return False
-    except ValueError:
-        return False
-# функция ввода значения угла, принимает переменную Angle ,
-# возвращает ee если онa прошлa проверку isPositiveNumber
-def getAngle():
-    while True:
-        Angle = input('Введи угол: ' )
-        if isPositiveNumber(Angle):
-            Angle=float(Angle)
-            return (Angle)
-        else:
-            print('Ошибка, введите положительное число')
+import CheckInput
 
-u1 = getAngle()
-u2 = getAngle()
+print('Программма определения свойства треугольника')
+
+u1 = CheckInput.getPositiveNumber('Введите первый угол: ')
+u2 = CheckInput.getPositiveNumber('Введите второй угол: ')
 
 while float(u1) + float(u2) >= 180:
     print('Ошибка,введи значения углов заново')
-    u1 = getAngle()
-    u2 = getAngle()
+    u1 = CheckInput.getPositiveNumber('Введите первый угол: ')
+    u2 = CheckInput.getPositiveNumber('Введите второй угол: ')
 else:
     if float(u1) == 90 or float(u2) == 90:
         print('Это прямоугольный треугольник')
