@@ -46,3 +46,9 @@ def getNumber(message):
         else:
             print('Ошибка, Введитe число')
 
+#Функция запрашивает ввод икс и игрек, проверяет их на то что введенное значение число, возвращает их в кортеж
+def getCoordinate():
+    x = getNumber('x = ')
+    y = getNumber('y = ')
+    return (x, y)
+
