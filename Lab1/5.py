@@ -4,11 +4,11 @@ print('Прогрмма определяет сколько полных час�
 
 second = CheckInput.getPositiveNumber('Введите, секунду суток: ')
 
-if second > 86400:
+while second > 86400:
     print('Ошибка, заданное значение больше, чем количество секунд в сутках')
     second = CheckInput.getPositiveNumber('Введите, секунду суток: ')
 else:
-    hour = second/3600
-    minute = second/60
+    hour = second / 3600
+    minute = second / 60
     print('Полных часов: {0:.0f}  '.format(hour))
     print('Полных минут: {0:.0f}  '.format(minute))
