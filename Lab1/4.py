@@ -3,14 +3,14 @@ import math
 
 print('Программа вычисления периметра треугольника по координатам вершин')
 
-#Запись координат вершин треугольника
+#Ввод координат вершин треугольника
 print('Введите координаты точки А вашего треугольника: ')
-A = CheckInput.getCoordinate()
+a = CheckInput.getCoordinate()
 print('Введите координаты точки B вашего треугольника: ')
-B = CheckInput.getCoordinate()
+b = CheckInput.getCoordinate()
 print('Введите координаты точки C вашего треугольника: ')
-C = CheckInput.getCoordinate()
+c = CheckInput.getCoordinate()
 
 #Вычисление длин сторон треугольника, периметра и вывод ответа
-perimeter = math.sqrt(((B[0] - A[0]) ** 2) + ((B[1] - A[1]) ** 2)) + math.sqrt(((C[0] - B[0]) ** 2) + ((C[1] - B[1]) ** 2)) + math.sqrt(((C[0] - A[0]) ** 2) + ((C[1] - A[1]) ** 2))
+perimeter = math.sqrt(((b[0] - a[0]) ** 2) + ((b[1] - a[1]) ** 2)) + math.sqrt(((c[0] - b[0]) ** 2) + ((c[1] - b[1]) ** 2)) + math.sqrt(((c[0] - a[0]) ** 2) + ((c[1] - a[1]) ** 2))
 print('Периметр треугольника равен: {0:.1f}'.format(perimeter))
