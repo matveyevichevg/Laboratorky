@@ -15,12 +15,16 @@ while u > 180:
     u = CheckInput.getPositiveNumber('Введите угол между сторонами треугольника: ')
 else:
     c = math.sqrt(a**2 + b**2 - 2 * a * b * math.cos(u))
-
+print('Стороны треугольника a = {0:.1f} '.format(a), 'b = {0:.1f} '.format(b), 'c =  {0:.1f} '.format(c), 'Угол =  {0:.1f} '.format(u))
 if a == b and b == c:
     print('Треугольник равносторонний')
 elif u == 90 and a == b or a == c or b == c:
     print('Треугольник равнобедренный и прямоугольный')
 elif a == b or a == c or b == c:
     print('Треугольник равнобедренный')
-else:
+elif a != b and a != c and b != c and u == 90:
+    print('Треугольник разносторонний и прямоугольный')
+elif a != b and a != c and b != c:
     print('Треугольник разносторонний')
+
+
