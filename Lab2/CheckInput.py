@@ -28,7 +28,9 @@ def getPositiveNumber(message):
 # возвращает True если это число, False в случае если это строка
 def isNumber(num):
     try:
-        if float(num):
+        if int(num) == 0:
+            return num
+        elif float(num):
             return True
         else:
             return False
@@ -121,7 +123,7 @@ def arrayInput():
 
     while n == 0:
         print('Введите положительное значение')
-        n = getPositiveNumber('Введите размер массива ')
+        n = getPositiveNumber_int('Введите размер массива ')
     for i in range(int(n)):
         data_array.append(getNumber('Введите '+ str(i) +' элемент массива '))
     return data_array
