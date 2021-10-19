@@ -10,8 +10,8 @@ def vvod():
 def obrabotka(array):
     #Поиск индекса максимального значения
     maxArgument = np.argmax(array)
-    #Поиск индекса минимального значения
-    minArgument = np.argmin(array)
+    #Поиск  минимального значения
+    minArgument = np.amin(array)
     #Замена максимального значения - минимальным
     array[maxArgument] = minArgument
 
