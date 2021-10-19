@@ -5,7 +5,7 @@ import numpy as np
 
 #Ввод элементов массива
 def vvod():
-    array = CheckInput.arrayInput()
+    array = CheckInput.arrayInput_int()
     return array
 
 #Заменяет минимальное значение, средним арифмитическим его элементов, находящихся на четных позициях
@@ -21,35 +21,27 @@ def obrabortka(array):
 def vyvod(array):
     print(array)
 
-#Функция ввода пункта меню
-def menu():
-    userchoise = CheckInput.getNumber_int('Введите пункт меню цифрой:\n\n1. Ввод элементов массива\n2. Обработка массива\n3. Вывод массива на экран\n4. Выход\n')
-    while userchoise < 1 or userchoise > 4:
-        print('Ошибка, укажите существующий пункт меню')
-        userchoise = CheckInput.getNumber_int('Введите пункт меню цифрой:\n1. Ввод элементов массива\n2. Обработка массива\n3. Вывод массива на экран\n4. Выход\n')
-    return userchoise
 
-
-choise = menu()
-
-#Ограничение на ввод пункта меню, вначале всегда может быть только 1 или 4.
-while choise  >= 2 and choise < 4:
-    print('Ошибка, сначала надо ввести массив, выберите пункт 1')
-    print()
-    choise = menu()
-
-#Реализация
-while choise == 1:
-    a = vvod()
-    print()
-    choise = menu()
-    while choise == 2:
-        obrabortka(a)
+#Реализация меню
+choise = CheckInput.menu()
+a = []
+while choise == 2 or choise == 3:
+    print('Сначала введи массив(п.1)\n')
+    choise = CheckInput.menu()
+while choise:
+    if choise == 1:
+        a = vvod()
         print()
-        choise = menu()
-        while choise == 3:
-            vyvod(a)
-            print()
-            choise = menu()
-        else:
-            break
+        choise = CheckInput.menu()
+    elif choise == 2:
+        obrabortka(a)
+        print('Массив обработан')
+        print()
+        choise = CheckInput.menu()
+    elif choise == 3:
+        vyvod(a)
+        print()
+        choise = CheckInput.menu()
+    elif choise == 4:
+        quit()
+
