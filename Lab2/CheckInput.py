@@ -75,7 +75,7 @@ def getPositiveNumber_int(message):
             n = int(n)
             return n
         else:
-            print('Ошибка, Введитe положительное число')
+            print('Ошибка, Введитe целое положительное число')
 # #Функция проверяет входное значение на чцелочисленное значение
 # возвращает True если это целочисленное значение, False в случае если это строка
 def isNumber_int(num):
@@ -100,8 +100,8 @@ def getNumber_int(message):
         else:
             print('Ошибка, Введитe целочисленное значение')
 
-#Функция ввода размера динамического массива и его значений, возвращает массив
-def arrayInput():
+#Функция ввода размера целочисленного массива и его значений, возвращает массив
+def arrayInput_int():
 
     data_array = []
     n = getPositiveNumber_int('Введите размер массива ')
@@ -112,3 +112,27 @@ def arrayInput():
     for i in range(int(n)):
         data_array.append(getNumber_int('Введите '+ str(i) +' элемент массива '))
     return data_array
+
+#Функция ввода размера массива и его значений, возвращает массив
+def arrayInput():
+
+    data_array = []
+    n = getPositiveNumber('Введите размер массива ')
+
+    while n == 0:
+        print('Введите положительное значение')
+        n = getPositiveNumber('Введите размер массива ')
+    for i in range(int(n)):
+        data_array.append(getNumber('Введите '+ str(i) +' элемент массива '))
+    return data_array
+
+
+
+#Функция ввода пункта меню
+def menu():
+    userchoise = getNumber_int('Введите пункт меню цифрой:\n\n1. Ввод элементов массива\n2. Обработка массива\n3. Вывод массива на экран\n4. Выход\n')
+    while userchoise < 1 or userchoise > 4:
+        print('Ошибка, укажите существующий пункт меню')
+        userchoise = getNumber_int('Введите пункт меню цифрой:\n1. Ввод элементов массива\n2. Обработка массива\n3. Вывод массива на экран\n4. Выход\n')
+    return userchoise
+
